@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavraky</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .install-btn {
+            background-color: #16213e;
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .install-btn:hover {
+            background-color: #0f3460;
+        }
+        .install-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        .install-btn:hover::after {
+            animation: ripple 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes ripple {
+            0% { transform: scale(0, 0); opacity: 1; }
+            20% { transform: scale(25, 25); opacity: 1; }
+            100% { opacity: 0; transform: scale(40, 40); }
+        }
+        .game-preview {
+            width: 300px;
+            height: 200px;
+            background-color: #0f3460;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .game-character {
+            width: 50px;
+            height: 50px;
+            background-color: #e94560;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: moveCharacter 5s infinite alternate ease-in-out;
+        }
+        @keyframes moveCharacter {
+            0% { left: 0; bottom: 0; }
+            25% { left: 250px; bottom: 0; }
+            50% { left: 250px; bottom: 150px; }
+            75% { left: 0; bottom: 150px; }
+            100% { left: 0; bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lavraky</h1>
+        <div class="game-preview">
+            <div class="game-character"></div>
+        </div>
+        <a href="file:///C:/Users/darwi/AppData/Local/Programs/Swarm/Lavraky.exe" class="install-btn" download>Installer le jeu</a>    </div>
+</body>
+</html>
